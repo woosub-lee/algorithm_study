@@ -1,4 +1,4 @@
-#1이 될때 까지
+# 1이 될때 까지
 n,k = map(int,input().split())
 result = 0
 while n!=1:

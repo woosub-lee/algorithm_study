@@ -1,4 +1,4 @@
-#숫자 카드 게임(2중 반복문)
+# 숫자 카드 게임(2중 반복문)
 n,m = map(int,input().split())
 result = 0
 for i in range(n):
