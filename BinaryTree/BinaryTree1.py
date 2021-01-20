@@ -6,13 +6,17 @@ class Node(object):
         self.right = None
 
     def size(self):
-        left_size = self.left.size() if self.left else 0  # 왼쪽노드가 존재하면 1
-        right_size = self.right.size() if self.right else 0  # 오른쪽 노드가 존재하면 1
+        left_size = self.left.size() if self.left else 0  # 재귀 (왼쪽노드가 존재하면 왼쪽의 size())
+        print(left_size)
+        right_size = self.right.size() if self.right else 0  # 재귀 (오른쪽노드가 존재하면 오른쪽의 size())
+        print(right_size)
         return left_size + right_size + 1
 
     def depth(self):
-        left_depth = self.left.depth() if self.left else 0
-        right_depth = self.right.depth() if self.right else 0
+        left_depth = self.left.depth() if self.left else 0  # 재귀 (왼쪽노드가 존재하면 왼쪽의 depth())
+        print(left_depth)
+        right_depth = self.right.depth() if self.right else 0  # 재귀 (오른쪽노드가 존재하면 오른쪽의 depth())
+        print(right_depth)
         return left_depth + 1 if left_depth > right_depth else right_depth + 1  # 왼쪽깊이와 오른쪽깊이 중 큰 것
 
 
