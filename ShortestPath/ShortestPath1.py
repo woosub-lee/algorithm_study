@@ -1,23 +1,31 @@
-import heapq
-INF = 987654321
-n, m = map(int, input().split())
+# 다익스트라 알고리즘 예제
+"""
+우선순위 큐: 우선순위가 높은 데이터를 먼저 삭제
+큐: 먼저 들어온 데이터를 먼저 삭제
+스택: 제일 나중에 들어온 데이터를 먼저 삭제
+"""
+import heapq  # 우선순위 큐
+INF = 987654321  # 무한, 노드가 이어지지 않음을 뜻함
+n, m = map(int, input().split())  # n:노드의 수, m:간선의 수
 start = int(input())
 graph = [[] for i in range(n + 1)]
 distance = [INF] * (n + 1)
 
 for _ in range(m):
-    a, b, c = map(int, input().split())
-    graph[a].append((b, c))
+    a, b, c = map(int, input().split())  # 자신, 상대, 거리
+    graph[a].append([b, c])  # 그래프 배열의 자신의 노드에 상대노드와 그 거리를 삽입
+
 
 def dijkstra(start):
-    q = []
-    heapq.heappush(q, (0, start))
-    distance[start] = 0
-    while q:
-        dist, now = heapq.heappop(q)
-        if distance[now] < dist:
+    q = []  # 우선순위 큐: 최소힙
+    heapq.heappush(q, (0, start))  # heapq: 튜플의 첫 원소를 우선순위
+    distance[start] = 0  # 자신의 노드이므로 거리는 0
+    while q:  # q(우선순위 큐)의 원소가 존재하는 동안
+        dist, now = heapq.heappop(q)  # 거리, 현재 노드
+        if distance[now] < dist:  # 최소거리가 아니면 continue
             continue
         for i in graph[now]:
+            print(i, 'i')
             cost = dist + i[1]
             if cost < distance[i[0]]:
                 distance[i[0]] = cost
