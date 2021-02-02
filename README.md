@@ -1,4 +1,14 @@
-# algorithm_study
-Mostly I use python.  
-I make a note of my code to solve algorithm problems  
-The codes are seperated by folders
+# 📘 Algorithm_study 알고리즘 공부하기
+## 💬 Language 사용 언어
+파이썬을 통해 작성합니다.  
+C 혹은 C++ 코드가 추가 예정입니다.  
+## 🗂 Folder 폴더 관리
+알고리즘 공부한 코드들을 폴더별로 관리합니다.  
+ex) 탐욕법 폴더, 동적계획법 폴더 ... DFS/BFS 폴더 등등  
+## 📚 Book 참고 도서
+나동빈님의 '이것이 코딩테스트다.'를 참고하여 공부하고 있습니다.  
+1회독과 복습이 완료되면 '프로그래밍 대회에서 배우는 알고리즘 문제해결전략'을 공부할 예정입니다.
+## ✏ 어떻게 공부하고 있나요?
+1 day 1 commit, **1일 1커밋** 운동을 실천중에 있습니다.  
+하루에 하나 이상의 문제풀기, 혹은 부족한 코드 공부하며 첨삭하기등 하루에 하나 이상 실행하려 노력중입니다.  
+하루에 한번 프로그래머스, BOJ등에서 어려웠던 문제를 복기해봅니다.
