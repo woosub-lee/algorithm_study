@@ -1,9 +1,8 @@
 # 서로소 집합 구조
 def FindParent(array, current):
     if array[current] != current:
-        return FindParent(array, array[current])
-    else:
-        return array[current]
+        array[current] = FindParent(array, array[current])
+    return array[current]
 
 
 def UnionParent(array, element1, element2):
@@ -24,10 +23,24 @@ for i in range(NumberOfEdge):
 # 출력
 print("원소가 속한 집합:", end=" ")
 for i in range(1, NumberOfElement+1):
-    print(FindParent(Elements, Elements[i]), end=" ")
+    print(FindParent(Elements, i), end=" ")
 print()
 
 print("부모 테이블:", end=" ")
 for element in Elements[1:]:
     print(element, end=" ")
 
+"""
+input
+6 4
+1 4
+2 3
+2 4
+5 6
+"""
+
+"""
+output
+원소가 속한 집합: 1 1 1 1 5 5 
+부모 테이블: 1 1 1 1 5 5 
+"""
