@@ -4,8 +4,9 @@ NumberOfNode = int(input())
 NumberOfEdge = int(input())
 SortedNodes = []
 Queue = deque()
-InDegree = [0 for i in range(NumberOfNode+1)]
+InDegree = [0 for i in range(NumberOfNode+1)]  # 진입차수 리스트
 Edges = [[] for i in range(NumberOfNode+1)]
+# 방향그래프 이므로 출발노드, 도착노드를 구별
 for i in range(NumberOfEdge):
     StartNode, EndNode = map(int, input().split())
     Edges[StartNode].append(EndNode)
@@ -14,7 +15,7 @@ for i in range(NumberOfEdge):
 for i in range(NumberOfNode):
     if InDegree[i] == 0:
         Queue.append(i)
-
+# 큐가 빌때까지 진입차수 순으로 popleft
 while Queue:
     Current = Queue.popleft()
     SortedNodes.append(Current)
