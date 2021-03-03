@@ -3,43 +3,40 @@
 """
 실수했던 점: bfs를 구현하는데 어려움이 존재함
 
-기억해야할 점: 시간 복잡도를 줄이기 위해 노력해야함
+기억해야할 점: 큐로 구현하는데 성공했다.
+             dfs-bfs 추가 공부 요망
+             time을 큐에 같이 넣어 while queue로 돌리는데 성공
 """
 
 import sys
 from collections import deque
 
-
-def isInBoard(boardSize, nowPosition):
-    if nowPosition[0] < 0 or nowPosition[0] >= boardSize:
-        return False
-    if nowPosition[1] < 0 or nowPosition[1] >= boardSize:
-        return False
-    return True
-
-def bfs(array, now):
-    dx = [1, 0, -1, 0]
-    dy = [0, 1, 0, -1]
-    virus = array[now[0]][now[1]]
-    for i in range(4):
-        position = [now[0]+dx[i], now[1]+dy[i]]
-        if isInBoard(len(array), position):
-            if array[position[0]][position[1]] == 0:
-                array[position[0]][position[1]] = virus
-
+dx = [1, -1, 0, 0]
+dy = [0, 0, -1, 1]
 boardSize, virusAmount = map(int, sys.stdin.readline().rstrip().split())
 board = []
+Virus = []
+visited = [[False for i in range(boardSize)] for j in range(boardSize)]
 for i in range(boardSize):
     row = list(map(int, sys.stdin.readline().rstrip().split()))
     board.append(row)
+    for j in range(boardSize):
+        if board[i][j] != 0:
+            Virus.append([board[i][j], 0, i, j])
+queue = deque(sorted(Virus))
 second, yTarget, xTarget = map(int, sys.stdin.readline().rstrip().split())
-for i in range(second):
-    extendVirus = []
-    for y in range(boardSize):
-        for x in range(boardSize):
-            if board[y][x] != 0:
-                if not board[y][x] in extendVirus:
-                    extendVirus.append(board[y][x])
-                    bfs(board, [y, x])
-
+while queue:
+    virusKind, time, nowY, nowX = queue.popleft()
+    if time == second:
+        break
+    if nowY+1 == yTarget and nowX+1 == xTarget:
+        board[nowY][nowX] = virusKind
+        break
+    for i in range(4):
+        if nowY+dy[i] >= 0 and nowY+dy[i] < boardSize and nowX+dx[i] >= 0 and nowX+dx[i] < boardSize:
+            if board[nowY + dy[i]][nowX + dx[i]] == 0:
+                board[nowY + dy[i]][nowX + dx[i]] = virusKind
+                queue.append([virusKind, time+1, nowY+dy[i], nowX+dx[i]])
 print(board[yTarget-1][xTarget-1])
+
+
