@@ -1,23 +1,11 @@
 # 연산자 끼워넣기
 # 외부 소스에서 입력예제를 제공받음 (https://www.acmicpc.net/problem/18405 참조)
 """
-실수했던 점:
+실수했던 점: check함수의 numbers의 인덱싱이 잘못 됬었다.
 
-기억해야할 점:
+기억해야할 점: 재귀함수로 dfs를 구현할 수 있었다.
 """
 from sys import stdin
-"""
-숫자개수
-숫자들
-연산자들
-
-dfs를 쓸거야
-dfs는 어떻게 해
-depth를 기준으로 잡고 재귀를 돌아
-연산자들의 리스트를 만들고
-check를 해 수는 변하지 않으니까
-그러고선 max와 min이면 update
-"""
 minResult = 987654321
 maxResult = -987654321
 numberCount = int(input())
