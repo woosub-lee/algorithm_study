@@ -1,5 +1,5 @@
 # 연산자 끼워넣기
-# 외부 소스에서 입력예제를 제공받음 (https://www.acmicpc.net/problem/18405 참조)
+# 외부 소스에서 입력예제를 제공받음 (https://www.acmicpc.net/problem/14888 참조)
 """
 실수했던 점: check함수의 numbers의 인덱싱이 잘못 됬었다.
 
