@@ -4,6 +4,10 @@
 실수했던 점: dfs를 성공적으로 구현했으나, 다이나믹 프로그래밍을 고려하지 못하고 시간초과
     
 기억해야할 점: DP 공부 요망
+=======
+실수했던 점:
+
+기억해야할 점:
 """
 import sys
 input = sys.stdin.readline
@@ -13,6 +17,10 @@ visited = [[False for i in range(columnCount)] for j in range(rowCount)]
 memo = [[-1 for i in range(columnCount)] for j in range(rowCount)]
 for i in range(rowCount):
     board.append(list(input().rstrip()))
+for i in range(rowCount):
+    board.append(list(input().rstrip()))
+isLoop = False
+result = 0
 dy = [-1, 1, 0, 0]
 dx = [0, 0, -1, 1]
 def isWrong(position):
@@ -43,6 +51,4 @@ def dfs(nowY, nowX):
     return memo[nowY][nowX]
 
 
-
 sys.stdout.write(str(dfs(0, 0)))
-
