@@ -1,3 +1,9 @@
+# 소트
+# 외부에서 입력을 제공받음 (https://www.acmicpc.net/problem/1071 참고)
+"""
+실수했던 점: pop을 popleft로 오인, 결과 리스트 순서에 영향이 있었음
+기억해야할 점: deque와 리스트를 합칠 수 없으니, deque를 리스트로 만들어서 더하여야 함
+"""
 import sys
 from collections import deque
 input = sys.stdin.readline
