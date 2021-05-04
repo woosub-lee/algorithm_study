@@ -1,3 +1,11 @@
+# 36진수
+# 외부코드에서 입력을 제공받음 (https://www.acmicpc.net/problem/1036 참고)
+"""
+실수했던 점: 완전탐색으로 접근함
+
+기억해야할 점: 수를 기억할 필요 없이 가장 큰 변화량 N개를 더하면 되었다.
+"""
+
 import sys
 from string import ascii_uppercase
 input = sys.stdin.readline
