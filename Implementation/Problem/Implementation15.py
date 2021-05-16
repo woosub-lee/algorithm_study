@@ -1,4 +1,19 @@
-# 이걸 푸는 미래의 나
-# 지금 당장 구현하기 귀찮아서 이 글을 남긴다.
-# 유니온 파인드로 구현해라
-# 집합 합치기, 확인하기
+# 요세푸스 문제0
+# 외부코드에서 입력을 제공받음 (https://www.acmicpc.net/problem/11866 참고)
+"""
+실수했던 점: 인덱스 에러 발생함
+
+기억해야할 점: stack을 이용하여 해결함
+"""
+import sys
+n, k = map(int, input().split())
+numbers = [str(i+1) for i in range(n)]
+result = []
+index = 0
+while numbers:
+    index = (index+k-1) % len(numbers)
+    result.append(numbers.pop(index))
+sys.stdout.write('<')
+for number in result[:-1]:
+    sys.stdout.write(number+', ')
+sys.stdout.write(result[-1]+'>')
