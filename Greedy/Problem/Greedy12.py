@@ -1,3 +1,10 @@
+# 숫자의 신
+# 외부에서 입력을 제공받음 (https://www.acmicpc.net/problem/1422 참고)
+"""
+실수했던 점: 람다식으로 소트를 진행하기에 어려움을 느껴 버블정렬의 아이디어로 정렬을 구현함
+
+기억해야할 점: maxValue를 구하는 구현식을 간단히 할 수 있을 것 같음
+"""
 import sys
 input = sys.stdin.readline
 print = sys.stdout.write
